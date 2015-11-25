@@ -1,0 +1,136 @@
+/**
+ * Kultist
+ * A theme for RevealJS by @codekult.
+ * Custom cover and closing slides. Dark and light versions. Custom code syntax.
+ *
+ * This theme is Copyright (C) 2015 Diego Calderón, https://codekult.github.io. It is MIT licensed.
+ * reveal.js is Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+@import url('https://fonts.googleapis.com/css?family=Lato:300,300italic,700,700italic,900');
+open .
+
+// Colors
+$black: #263238;
+$white: #FFF8E1;
+$foreground: #d7dad8;
+$darkPurple: #311B92;
+$yellow: #FFD54F;
+$lightYellow: #FFECB3;
+$green: #69F0AE;
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: $darkPurple;
+
+// Typo
+$mainFont: 'Lato', sans-serif;
+$mainFontSize: 38px;
+$mainColor: $white;
+
+$normalWeight: 300;
+$boldWeight: 700;
+$ultraBoldWeight: 900;
+
+// Headings
+$headingFont: $mainFont;
+$headingColor: $mainColor;
+$headingFontWeight: $boldWeight;
+$headingTextShadow: none;
+$headingTextTransform: none;
+
+$heading1Size: 3em;
+$heading2Size: 1.5em;
+$heading3Size: 1.2em;
+$heading4Size: 1.00em;
+
+$heading1FontWeight: $ultraBoldWeight;
+$heading2FontWeight: $normalWeight;
+
+$heading2Color: $yellow;
+$heading3Color: $green;
+
+// Links
+$linkColor: $yellow;
+$linkColorHover: $lightYellow;
+
+// Selection
+$selectionBackgroundColor: lighten($backgroundColor, 20%);
+
+// Code
+$codeFont: 'Cousine', monospace;
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+// Custom rules
+.reveal {
+    font-weight: $normalWeight;
+}
+
+.reveal h1 {
+    font-weight: $heading1FontWeight;
+}
+
+.reveal h2 {
+    color: $heading2Color;
+    font-weight: $heading2FontWeight;
+    font-style: italic;
+}
+
+.reveal h3 {
+    color: $heading3Color;
+}
+
+.reveal strong,
+.reveal b,
+.reveal dt,
+.reveal table th {
+	font-weight: $boldWeight;
+}
+
+.reveal a {
+    border-bottom: dashed 1px $linkColor;
+}
+
+.reveal a:hover {
+    border-bottom: dashed 1px $linkColorHover;
+}
+
+.reveal pre {
+    width: 100%;
+    font-size: 0.6em;
+	font-family: $codeFont;
+	line-height: 1.3em;
+    box-shadow: none;
+}
+
+.reveal code {
+	font-family: $codeFont;
+}
+
+.reveal p code {
+  padding: 0.2em 0.3em 0.1em;
+  font-size: 0.75em;
+  background: darken($backgroundColor, 5%);
+  border-radius: 3px;
+}
+
+.reveal pre code {
+    padding: .5em;
+    max-height: 50%;
+    background: $black;
+	color: $foreground;
+}
+
+.reveal .progress span {
+    background: lighten($backgroundColor, 15%);
+}

@@ -1,0 +1,58 @@
+/*!
+ * Custom styles for this presentation
+ */
+
+/* Load fonts */
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic,700italic,900');
+
+/* Overwrites */
+body {
+  background: #262133;
+  background-color: #262133;
+}
+
+.reveal h1 {
+    font-size: 2.5em;
+}
+
+.reveal h3 {
+    font-size: 1.5em;
+    font-style: italic;
+}
+
+.reveal h1,
+.reveal h3 {
+    font-family: 'Merriweather', serif;
+}
+
+/* Custom classes */
+.reveal .no-border {
+    border: 0;
+}
+
+.reveal img.no-border {
+    background: none;
+    box-shadow: none;
+}
+
+/* Typography */
+.reveal .font-serif {
+    font-family: 'Merriweather', serif;
+}
+
+.reveal .font-monospace {
+    font-family: 'Cousine', monospace;
+}
+
+.reveal .text-large,
+.reveal .text-larger {
+    line-height: 1.5;
+}
+
+.reveal .text-large {
+    font-size: 1.15em;
+}
+
+.reveal .text-larger {
+    font-size: 1.33em;
+}

@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>React, Redux and FRP in action</title>
+
+        <meta name="description" content="A talk about React, Redux and FRP in action">
+        <meta name="author" content="codekult">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/kultist.css" id="theme">
+        <link rel="stylesheet" href="css/custom.css">
+
+        <!-- Code syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/kultist.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section>
+                    <h1>A Paradigm Shift</h1>
+                    <h3><em>React, Redux and FRP in action</em></h3>
+                </section>
+
+                <section>
+                    <h2>Setting expectations:</h2>
+                    <ul>
+                        <li>Three Big Rs (<strong>R</strong>eact, <strong>R</strong>edux, F<strong>R</strong>P).</li>
+                        <li class="fragment">We gonna see some example code…</li>
+                        <li class="fragment">… But we gonna talk even more about theory and new concepts.</li>
+                        <li class="fragment">First, focus on the big picture… details for later.</li>
+                        <li class="fragment">Review of good practices and advices from the <strong>experts</strong>.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Our Whole App as a Pure Function</h2>
+                </section>
+
+                <section>
+                    <h3>Pure functions</h3>
+                </section>
+
+                <section>
+                    <p class="text-larger font-serif">I. <em>“Separate <strong>mutation</strong> from <strong>calculation</strong>.”</em></p>
+                    <p class="fragment">Which means avoid side effects.</p>
+                </section>
+
+                <section>
+                    <p>That makes pure functions <strong>modular</strong> (portable, parallelizable).</p>
+                </section>
+
+                <section>
+                    <p class="text-larger font-serif">II. <em>“Separate <strong>input</strong> from <strong>environment</strong>.”</em></p>
+                    <p class="fragment">Which means that them work as maps.</p>
+                </section>
+
+                <section data-background="#13111a">
+                    <p class="text-large font-monospace"><em>function double(x) {return x * 2;}
+                </em></p>
+                </section>
+
+                <section data-background="#13111a">
+                    <p class="text-large font-monospace"><em>x =&gt; x * 2</em></p>
+                </section>
+
+                <section data-background="#13111a">
+                    <p class="text-large font-monospace"><em>{1 =&gt; 2, 2 =&gt; 4, 3 =&gt; 6}</em></p>
+                </section>
+
+                <section data-background="#13111a">
+                    <p><img class="no-border" src="images/fn_graph.png"/></p>
+                </section>
+
+                <section>
+                    <p>That makes pure functions <strong>predictable</strong> (testeable, memoizable).</p>
+                </section>
+
+                <section data-background="#222">
+                    <img class="no-border" src="images/react_logo.png" width="33%"/>
+                    <h3 style="color: #61dafb;">React</h3>
+                </section>
+
+                <section>
+                    <p>Normally described as the <strong>V</strong>/<strong>VC</strong> in <strong>MVC</strong>…</p>
+                </section>
+
+                <section>
+                    <p>Uses <strong>virtual-dom</strong> to improve DOM manipulation performance…</p>
+                </section>
+
+                <section>
+                    <p>Unopininated and <a href="https://www.youtube.com/watch?v=4anAwXYqLG8">small API footprint</a>…</p>
+                </section>
+
+                <section>
+                    <p>… but enough of features, also and most importantly it claims:</p>
+                </section>
+
+                <section>
+                    <p class="text-large font-serif"><em><strong>view/UI</strong> must be described as a <strong>pure function</strong> of our app <strong>state</strong>.</em></p>
+                </section>
+
+                <section>
+                    <p><a href="https://egghead.io/lessons/react-building-stateless-function-components-new-in-react-0-14">Stateless Function Components</a></p>
+                </section>
+
+                <section data-background="#13111a">
+                    <p class="text-large font-monospace"><em>props =&gt; componentDOM</em></p>
+                </section>
+
+                <section>
+                    <p class="text-larger"><em>React</em> is <strong>Modular</strong>.</p>
+                </section>
+
+                <section>
+                    <h3>Redux</h3>
+                </section>
+
+                <section>
+                    <p>An architecture that takes care of the <strong>M</strong> in <strong>MVC</strong>.</p>
+                </section>
+
+                <section>
+                    <p>Based on both Facebook’s <a href="https://facebook.github.io/flux/">Flux</a> and <a href="http://elm-lang.org/">Elm</a> architecture…</p>
+                </section>
+
+                <section>
+                    <p>Unidirectional data flow…</p>
+                </section>
+
+                <section>
+                    <p>As <em>React</em> it’s unopinionated and with a minimal API…</p>
+                </section>
+
+                <section>
+                    <p>… we can resume it’s ethos or claiming as:</p>
+                </section>
+
+                <section>
+                    <p class="text-large font-serif"><em>Every <strong>state mutation</strong> must be described as a <strong>pure function</strong> of <strong>previous state</strong> and a <strong>given action</strong>.</em></p>
+                </section>
+
+                <section data-background="#13111a">
+                    <p class="text-large font-monospace"><em>(state, action) =&gt; state</em></p>
+                </section>
+
+                <section>
+                    <p class="text-larger"><em>Redux</em> is <strong>Predictable</strong>.</p>
+                </section>
+            </div>
+
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+
+            // Full list of configuration options available at:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: false,
+                progress: true,
+                history: true,
+                center: true,
+
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                // Optional reveal.js plugins
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true },
+                    { src: 'plugin/notes/notes.js', async: true }
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>
