@@ -1,5 +1,8 @@
-# React, Redux and FRP in Action
-## A Paradigm Shift
+# A Paradigm Shift
+
+## React, Redux and FRP in Action
+
+Slides: https://codekult.github.io/react-redux-frp/
 
 ### Setting expectations:
 - Three Big Rs (**R**eact, **R**edux, F**R**P).
