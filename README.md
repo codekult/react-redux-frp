@@ -1,5 +1,6 @@
-# React, Redux and FRP in Action
-## A Paradigm Shift
+# A Paradigm Shift
+
+## React, Redux and FRP in Action
 
 ### Setting expectations:
 - Three Big Rs (**R**eact, **R**edux, F**R**P).
